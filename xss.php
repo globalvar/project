@@ -1,3 +1,3 @@
 <?php
-echo "Hello".$_GET['p'];
+echo "Hello ".$_GET['p'];
 ?>
