@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $q);
 ?>
 
 <html>
-<form action="" method="get">
+<form action="" method="POST">
 <input type='text' name='username'/>
 <input type='pass' name='password' />
 <input type='submit' value='submit' />
