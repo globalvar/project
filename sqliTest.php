@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost","dvwa","password","project");
+$conn = mysqli_connect("localhost","root","","project");
 
 
 if(isset($_GET['username']) && isset($_GET['password']))
