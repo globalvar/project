@@ -3,10 +3,10 @@
 $conn = mysqli_connect("localhost","root","","project");
 
 
-if(isset($_GET['username']) && isset($_GET['password']))
+if(isset($_POST['username']) && isset($_POST['password']))
 {
-$username = $_GET['username'];
-$password = $_GET['password'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
 
 $q = "select * from users where username='$username' and password='$password' ";
