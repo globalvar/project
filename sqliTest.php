@@ -1,12 +1,12 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","project");
+$conn = mysqli_connect("localhost","navneet","","project");
 
 
-if(isset($_POST['username']) && isset($_POST['password']))
+if(isset($_GET['username']) && isset($_GET['password']))
 {
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = $_GET['username'];
+$password = $_GET['password'];
 
 
 $q = "select * from users where username='$username' and password='$password' ";
@@ -18,7 +18,11 @@ $result = mysqli_query($conn, $q);
     echo "uid: " . $row["uid"]. " Username: " . $row["username"]. " password " . $row["password"]. " Name:".$row["name"]."<br>";
   }
 
+
+
 }
+
+
 
 
 ?>
