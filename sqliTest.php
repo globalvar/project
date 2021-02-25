@@ -31,7 +31,7 @@ $result = mysqli_query($conn, $q);
 <html>
 <form action="" method="GET">
 <input type='text' name='username'/>
-<input type='pass' name='password' />
+<input type='password' name='password' />
 <input type='submit' value='submit' />
 </form>
 </html>
