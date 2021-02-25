@@ -3,6 +3,7 @@
 $conn = mysqli_connect("localhost","navneet","navneet","project");
 
 
+
 if(isset($_GET['username']) && isset($_GET['password']))
 {
 $username = $_GET['username'];
@@ -28,7 +29,7 @@ $result = mysqli_query($conn, $q);
 ?>
 
 <html>
-<form action="" method="POST">
+<form action="" method="GET">
 <input type='text' name='username'/>
 <input type='pass' name='password' />
 <input type='submit' value='submit' />
