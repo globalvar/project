@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost","navneet","","project");
+$conn = mysqli_connect("localhost","navneet","navneet","project");
 
 
 if(isset($_GET['username']) && isset($_GET['password']))
