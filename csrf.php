@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","project");
+$conn = mysqli_connect("localhost","navneet","navneet","project");
 
 
 if(isset($_GET['deleteid']))
