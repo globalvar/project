@@ -16,7 +16,7 @@ $result = mysqli_query($conn, $q);
 
  while($row = mysqli_fetch_assoc($result)) {
 
-    echo "uid: " . $row["uid"]. " Username: " . $row["username"]. " password " . $row["password"]. " Name:".$row["name"]."<br>";
+    echo "uid: " . $row["uid"]. "<br/> Username: " . $row["username"]. "<br/> Password " . $row["password"]. "<br/> Name:".$row["name"]."<br>";
   }
 
 
