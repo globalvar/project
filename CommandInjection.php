@@ -3,8 +3,8 @@
 if(isset($_POST['webaddress']))
 {
 	$webAddress = $_POST['webaddress'];
-
-	echo eval('dig +short '.$webAddress);
+	
+	echo shell_exec("dig +short ".$webAddress);
 }
 
 ?>
