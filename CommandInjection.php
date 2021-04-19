@@ -4,8 +4,8 @@ if(isset($_POST['webaddress']))
 {
 	$webAddress = $_POST['webaddress'];
 	
-	echo "The IP address of ".$webAddress." is ".shell_exec("dig +short ".$webAddress);
-	die();
+	echo "The IP address of ".$webAddress." is <b> ".shell_exec("dig +short ".$webAddress)."</b><br/>";
+	//die();
 
 
 }
