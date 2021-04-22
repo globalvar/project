@@ -23,15 +23,19 @@ $result = mysqli_query($conn, $q);
 
  	$_SESSION['uid'] =  $row["uid"];
     echo "uid: " . $row["uid"]. " <br/>Username: " . $row["username"]. "<br/> password " . $row["password"]. " <br/> Name:".$row["name"]."<br>";
+    echo "<a href='logout.php'>Logout</a>";
   }
 
 
-if(isset($_GET['deleteid']))
+if(isset($_POST['password']))
 {
 
-$d_me = $_GET['deleteid'];
 
-$q = "Delete from users where uid='$d_me' ";
+$d_me = $_POST['password'];
+
+echo $d_me;
+
+$q = "update users set password='$d_me' where uid='".$_SESSION['uid']."' ";
 
 if(mysqli_query($conn, $q))
 {
@@ -52,8 +56,8 @@ if(mysqli_query($conn, $q))
 ?>
 
 <html>
-<form action="" method="GET">
-<input type="hidden" value="" name="deleteid"/>
+<form action="" method="POST">
+<input type="password" name="password" />
 <input type="submit" value="Delete"  />
 </form>
 </html>
