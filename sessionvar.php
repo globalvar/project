@@ -1,6 +1,11 @@
 <?php
 $conn = mysqli_connect("localhost","root","","project");
 
+session_start();
+
+
+if(!isset($_SESSION['uid']))
+{
 
 if(isset($_POST['username']) && isset($_POST['password']))
 {
@@ -8,8 +13,6 @@ if(isset($_POST['username']) && isset($_POST['password']))
 	$password = $_POST['password'];
 
 
-
-session_start();
 
 
 
@@ -25,7 +28,36 @@ $result = mysqli_query($conn, $q);
 
 
 header('Set-cookie:'.$_SESSION['uid']);
-echo "from the session".$_SESSION['uid'];
+echo "from the session ".$_SESSION['uid'];
+
+echo "<a href='logout.php'>Logout</a>";
+
+
+
+}
+
+}else
+{
+echo "already logged in";
+
+
+
+$q = "select * from users where username='$username' and password='$password' ";
+
+$result = mysqli_query($conn, $q);
+
+ while($row = mysqli_fetch_assoc($result)) {
+
+ 	$_SESSION['uid'] =  $row["uid"];
+    echo "uid: " . $row["uid"]. " Username: " . $row["username"]. " password " . $row["password"]. " Name:".$row["name"]."<br>";
+  }
+
+
+header('Set-cookie:'.$_SESSION['uid']);
+echo "from the session ".$_SESSION['uid'];
+
+echo "<a href='logout.php'>Logout</a>";
+
 
 }
 
