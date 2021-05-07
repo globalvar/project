@@ -1,34 +1,62 @@
 <?php
+$conn = mysqli_connect("localhost","root","","project");
 
-$conn = mysqli_connect("localhost","navneet","navneet","project");
+session_start();
 
-
-if(isset($_GET['deleteid']))
+if(isset($_POST['pass']) && isset($_POST['cpass']))
 {
+	$pass = $_POST['pass'];
+	$cpass = $_POST['cpass'];
+	
+	if($pass == $cpass)
+	{
+		$q = "update users set password='$pass' where uid=".$_SESSION['uid']."";
 
-$d_me = $_GET['deleteid'];
+		mysqli_query($conn,$q);
 
-$q = "Delete from users where uid='$d_me' ";
+		echo "Succesfully Changed.";
 
-if(mysqli_query($conn, $q))
-{
- echo "Success!";
- }else
-{
- echo "Failed!";
- }
-
-
+	}else
+	{
+		echo "Password does not match";
+	}
 }
 
 
-?>
 
-<html>
-<form action="" method="GET">
-<input type="hidden" value="5" name="deleteid"/>
-<input type="submit" value="Delete"  />
+if(!isset($_SESSION['uid']))
+{
+
+header('location:otp.php');
+
+}
+else
+{
+
+$q = "select * from users where uid=".$_SESSION['uid']."";
+
+$result = mysqli_query($conn, $q);
+
+ while($row = mysqli_fetch_assoc($result)) {
+
+ 
+    //echo "uid: " . $row["uid"]. " Username: " . $row["username"]. " password " . $row["password"]. " Name:".$row["name"]."<br>";
+  }
+
+
+echo "Welcome ".$row['name'];
+
+echo "
+Change Password
+<form action='' method='post'>
+<input type='password' name='pass'/>
+<input type='password' name='cpass'/>
+<input type='submit' value='submit'/>
 </form>
-</html>
 
+";
+echo "<a href='logout.php'>Logout</a>";
 
+}
+
+?>
