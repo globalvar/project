@@ -51,7 +51,7 @@ echo "<style>
 
 echo "
 <form action='checkotp.php' method='post'>
-<input type='text' name='otp'/>
+<input type='text' name='otp' placeholder='Enter OTP'/>
 <input type='submit' value='submit'/>
 </form>
 
@@ -74,7 +74,7 @@ echo "already logged in
 
 echo "
 <form action='checkotp.php' method='post'>
-<input type='text' name='otp'/>
+<input type='text' name='otp' placeholder='Enter OTP'/>
 <input type='submit' value='submit'/>
 </form>
 
@@ -87,7 +87,7 @@ echo "<a href='logout.php'>Logout</a>";
 
 
 <form id="form1" action="" method="POST">
-	<input type="text" name="username" />
-	<input type="password" name="password" />
+	<input type="text" name="username" placeholder="Username" />
+	<input type="password" name="password" placeholder="Password"/>
 	<input type="submit" value="login" />
 </form>

@@ -29,7 +29,8 @@ if(isset($_POST['otp']))
  		while($row = mysqli_fetch_assoc($result)) {
 
  			$_SESSION['uid'] =  $row["uid"];
-    		echo "uid: " . $row["uid"]. " <br/>Username: " . $row["username"]. "<br/> password " . $row["password"]. " <br/>Name:".$row["name"]."<br>";
+    		echo "uid: " . $row["uid"]. " <br/>Username: " . $row["username"];
+            echo "<br/> password " . $row["password"]. " <br/>Name:".$row["name"]."<br>";
   			}
 		
 			echo "<a href='logout.php'>Logout</a>";
