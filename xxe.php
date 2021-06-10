@@ -1,10 +1,13 @@
 <?php
+ 
+if(isset($_GET['p']))
+{ 
 
-$url = $_GET['p'];
+$a = $_GET['p'];
+$xml=simplexml_load_file($a);
 
-$xml = simplexml_load_string($url) or die('error');
+echo $xml->firstName;
+}
 
-//print_r($xml);
-echo $xml->lastName;
 
 ?>
